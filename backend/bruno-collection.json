@@ -1,0 +1,69 @@
+{
+  "name": "Book Management API",
+  "version": "1.0.0",
+  "collections": [
+    {
+      "name": "Books",
+      "items": [
+        {
+          "name": "Get All Books",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/books",
+            "headers": []
+          }
+        },
+        {
+          "name": "Get Book by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/books/:id",
+            "headers": []
+          }
+        },
+        {
+          "name": "Create Book",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:5000/api/books",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "raw": "{\n  \"title\": \"Sample Book\",\n  \"author\": \"John Doe\",\n  \"description\": \"A sample book description\",\n  \"publishedYear\": 2023\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Book",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:5000/api/books/:id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "raw": "{\n  \"title\": \"Updated Book Title\",\n  \"author\": \"John Doe\",\n  \"description\": \"Updated book description\",\n  \"publishedYear\": 2023\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Book",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5000/api/books/:id",
+            "headers": []
+          }
+        }
+      ]
+    }
+  ]
+} 
