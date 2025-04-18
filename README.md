@@ -1,108 +1,122 @@
-# Gestion de Livres - Application CRUD
+# Book Management System
 
-Une application de gestion de livres avec React et Express.
+A full-stack web application for managing books, built with React.js frontend and Node.js backend.
 
-## Prérequis
+## Features
 
-- Node.js (v14 ou supérieur)
+- View list of books
+- Add new books
+- Edit existing books
+- Delete books
+- RESTful API with Bruno collection for testing
+
+## Tech Stack
+
+### Frontend
+- React.js 18.2.0
+- React Router DOM 6.30.0
+- Axios for API calls
+- Bootstrap 5.3.5 for styling
+
+### Backend
+- Node.js
+- Express.js
 - MongoDB
-- npm ou yarn
+- Mongoose
+- CORS enabled
+
+## Prerequisites
+
+Before running this project, make sure you have the following installed:
+- Node.js
+- MongoDB (v8.0.4 or higher)
+- npm (Node Package Manager)
 
 ## Installation
 
-1. Clonez le dépôt :
+1. Clone the repository:
 ```bash
-git clone [URL_DU_REPO]
-cd [NOM_DU_REPO]
+git clone https://github.com/flixsoon/TP_d-ploiement.git
+cd TP_d-ploiement
 ```
 
-2. Installez les dépendances du frontend :
+2. Install frontend dependencies:
 ```bash
 npm install
 ```
 
-3. Installez les dépendances du backend :
+3. Install backend dependencies:
 ```bash
 cd backend
 npm install
 ```
 
-## Configuration
+## Running the Application
 
-1. Assurez-vous que MongoDB est en cours d'exécution sur votre machine
-2. Le backend se connecte à MongoDB sur `mongodb://localhost:27017/book-management`
+1. Start MongoDB service on your machine
 
-## Démarrage
-
-1. Démarrez le backend :
+2. Start the backend server:
 ```bash
 cd backend
-npm run dev
+node server.js
 ```
+The server will run on http://localhost:5000
 
-2. Dans un autre terminal, démarrez le frontend :
+3. In a new terminal, start the frontend development server:
 ```bash
+cd ..  # Go back to root directory
 npm start
 ```
+The frontend will be available at http://localhost:3000
 
-3. L'application sera accessible à l'adresse : `http://localhost:3000`
+## API Documentation
 
-## Fonctionnalités
+The API endpoints are available at `http://localhost:5000/api`:
 
-- Liste des livres
-- Ajout d'un nouveau livre
-- Modification d'un livre existant
-- Suppression d'un livre
-- Interface utilisateur responsive
+### Endpoints
 
-## Structure du Projet
+- `GET /api/books` - Get all books
+- `GET /api/books/:id` - Get a specific book
+- `POST /api/books` - Create a new book
+- `PUT /api/books/:id` - Update a book
+- `DELETE /api/books/:id` - Delete a book
+
+### Testing API with Bruno
+
+The project includes a Bruno collection for API testing. To use it:
+
+1. Install Bruno (Portable version)
+2. Open Bruno
+3. Go to File > Open Collection
+4. Navigate to `backend/bruno/Book Management API/Book Management API`
+5. Select the folder to load all API endpoints
+
+## Project Structure
 
 ```
-├── backend/               # Serveur Express
-│   ├── server.js         # Point d'entrée du serveur
-│   └── package.json      # Dépendances du backend
-├── src/                  # Code source React
-│   ├── components/       # Composants React
-│   ├── pages/           # Pages de l'application
-│   └── App.js           # Composant principal
-└── package.json         # Dépendances du frontend
+book-management-system/
+├── frontend/                # React frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── pages/         # Page components
+│   │   ├── api/           # API integration
+│   │   └── services/      # Service functions
+│   └── public/            # Static files
+├── backend/               # Node.js backend
+│   ├── models/           # MongoDB models
+│   ├── bruno/            # API collection
+│   └── server.js         # Express server
+└── README.md             # Project documentation
 ```
 
-## Déploiement sur GitHub
+## Contributing
 
-1. Créez un nouveau dépôt sur GitHub
-2. Initialisez Git dans votre projet :
-```bash
-git init
-```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-3. Ajoutez les fichiers au suivi Git :
-```bash
-git add .
-```
+## License
 
-4. Faites votre premier commit :
-```bash
-git commit -m "Initial commit"
-```
-
-5. Liez votre dépôt local à GitHub :
-```bash
-git remote add origin [URL_DU_REPO_GITHUB]
-```
-
-6. Poussez votre code :
-```bash
-git push -u origin main
-```
-
-## Utilisation de Bruno pour tester l'API
-
-1. Installez Bruno depuis [bruno.rest](https://www.bruno.rest/)
-2. Importez le fichier de collection Bruno fourni dans le projet
-3. Utilisez Bruno pour tester les endpoints de l'API :
-   - GET /api/books
-   - GET /api/books/:id
-   - POST /api/books
-   - PUT /api/books/:id
-   - DELETE /api/books/:id 
+This project is open source and available under the [MIT License](LICENSE). 
