@@ -1,0 +1,10 @@
+# Ignore everything at the root level (parent directory)
+../src/
+../public/
+../node_modules/
+../package.json
+../package-lock.json
+../tsconfig.json
+../tsconfig.node.json
+../vite.config.ts
+../vercel.json
