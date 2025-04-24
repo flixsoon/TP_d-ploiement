@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Alert from '../components/Alert';
@@ -16,13 +16,7 @@ const BookForm = () => {
     publishedYear: '',
   });
 
-  useEffect(() => {
-    if (id) {
-      fetchBook();
-    }
-  }, [id]);
-
-  const fetchBook = async () => {
+  const fetchBook = useCallback(async () => {
     try {
       setLoading(true);
       const response = await getBook(id);
@@ -35,7 +29,13 @@ const BookForm = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    if (id) {
+      fetchBook();
+    }
+  }, [id, fetchBook]);
 
   const handleChange = (e) => {
     setBook({ ...book, [e.target.name]: e.target.value });
