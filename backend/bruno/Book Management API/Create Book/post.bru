@@ -1,0 +1,20 @@
+meta {
+  name: Create Book
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5000/api/books
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Sample Book",
+    "author": "John Doe",
+    "description": "A sample book description",
+    "publishedYear": 2023
+  }
+} 
