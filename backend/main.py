@@ -17,7 +17,7 @@ app.add_middleware(
 # MongoDB Atlas connection
 MONGO_URI = os.getenv("MONGO_URI")
 client = AsyncIOMotorClient(MONGO_URI)
-db = client["your_db_name"]  # replace with your actual DB name
+db = client["abdelox28"]  # replace with your actual DB name
 
 @app.get("/")
 async def home():
